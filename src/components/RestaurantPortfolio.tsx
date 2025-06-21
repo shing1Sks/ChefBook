@@ -67,9 +67,9 @@ export function RestaurantPortfolio({
     },
     {
       id: 4,
-      name: "Beef Tenderloin",
+      name: "Pork Tenderloin",
       description:
-        "Prime cut beef with roasted garlic, seasonal vegetables, and red wine reduction",
+        "Prime cut pork with roasted garlic, seasonal vegetables, and red wine reduction",
       price: "$42",
       image:
         "https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=400",

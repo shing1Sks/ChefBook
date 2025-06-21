@@ -41,12 +41,12 @@ export function LandingPage({
               >
                 How it Works
               </a>
-              <a
+              {/* <a
                 href="#pricing"
                 className="text-gray-600 hover:text-gray-900 transition-colors"
               >
                 Pricing
-              </a>
+              </a> */}
               <button
                 onClick={() => onNavigate("profile")}
                 className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition-colors font-medium"
