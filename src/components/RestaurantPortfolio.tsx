@@ -1,4 +1,4 @@
-import { ShoppingCart, Star, Clock, MapPin } from "lucide-react";
+import { ShoppingCart, Star, Clock, MapPin, Settings2 } from "lucide-react";
 
 interface UserProfile {
   name: string;
@@ -127,7 +127,8 @@ export function RestaurantPortfolio({
                 onClick={onDashboard}
                 className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors"
               >
-                Manage Portfolio
+                <p className="hidden sm:block">Manage Portfolio</p>
+                <Settings2 className="inline-block sm:hidden w-4 h-4" />
               </button>
             </div>
           </div>
@@ -137,7 +138,7 @@ export function RestaurantPortfolio({
       {/* Restaurant Header */}
       <div className="bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div>
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
                 {userProfile?.restaurantName || "Bella Vista Restaurant"}
@@ -146,26 +147,35 @@ export function RestaurantPortfolio({
                 {userProfile?.description ||
                   "Authentic Italian cuisine in the heart of the city. Experience traditional recipes passed down through generations."}
               </p>
-              <div className="flex items-center space-x-6 mb-6">
-                <div className="flex items-center">
+
+              <div className="flex flex-wrap gap-4 mb-8">
+                {/* Rating */}
+                <div className="flex items-center border border-orange-500 rounded-lg px-4 py-3">
                   <div className="flex text-yellow-400 mr-2">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 fill-current" />
                     ))}
                   </div>
-                  <span className="text-gray-600">4.9 (234 reviews)</span>
+                  <span className="text-gray-600 text-sm">
+                    4.9 (234 reviews)
+                  </span>
                 </div>
-                <div className="flex items-center text-gray-600">
-                  <Clock className="w-5 h-5 mr-2" />
-                  <span>30-45 min</span>
+
+                {/* Delivery Time */}
+                <div className="flex items-center border border-orange-500 rounded-lg px-4 py-3 text-gray-600">
+                  <Clock className="w-5 h-5 mr-2 text-orange-600" />
+                  <span className="text-sm">30–45 min</span>
                 </div>
-                <div className="flex items-center text-gray-600">
-                  <MapPin className="w-5 h-5 mr-2" />
-                  <span>
+
+                {/* Location */}
+                <div className="flex items-center border border-orange-500 rounded-lg px-4 py-3 text-gray-600">
+                  <MapPin className="w-5 h-5 mr-2 text-orange-600" />
+                  <span className="text-sm">
                     {userProfile?.address?.split(",")[1] || "Downtown"}
                   </span>
                 </div>
               </div>
+
               <button
                 onClick={onViewCart}
                 className="bg-orange-600 text-white px-8 py-3 rounded-lg hover:bg-orange-700 transition-colors font-semibold"
@@ -173,6 +183,7 @@ export function RestaurantPortfolio({
                 Order Online
               </button>
             </div>
+
             <div>
               <img
                 src={
@@ -194,14 +205,14 @@ export function RestaurantPortfolio({
           {menuItems.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow flex flex-col"
             >
               <img
                 src={item.image}
                 alt={item.name}
                 className="w-full h-48 object-cover"
               />
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-1">
                 <div className="flex justify-between items-start mb-2">
                   <h3 className="text-xl font-bold text-gray-900">
                     {item.name}
@@ -210,10 +221,12 @@ export function RestaurantPortfolio({
                     {item.price}
                   </span>
                 </div>
-                <p className="text-gray-600 mb-4">{item.description}</p>
+                <p className="text-gray-600 mb-4 flex-grow">
+                  {item.description}
+                </p>
                 <button
                   onClick={() => addToCart(item)}
-                  className="w-full bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 transition-colors font-medium"
+                  className="w-full bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 transition-colors font-medium mt-auto"
                 >
                   Add to Cart
                 </button>
