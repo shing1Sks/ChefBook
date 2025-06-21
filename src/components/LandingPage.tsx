@@ -1,4 +1,4 @@
-import { Menu, Camera, ArrowRight, Star, Zap, Users } from "lucide-react";
+import { Camera, ArrowRight, Star, Zap, Users, ChefHat } from "lucide-react";
 import { FeatureCard } from "./FeatureCard.tsx";
 import { StepCard } from "./StepCard.tsx";
 
@@ -15,7 +15,16 @@ export function LandingPage({
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-                <Menu className="w-5 h-5 text-white" />
+                <ChefHat className="w-5 h-5 text-white" />
+                {/* <img
+                  src="../logo.png"
+                  className="w-8 h-8 rounded-md"
+                  // style={{
+                  //   filter:
+                  //     "brightness(1.1) sepia(1) hue-rotate(-10deg) saturate(11)",
+                  // }}
+                  alt=""
+                /> */}
               </div>
               <span className="text-xl font-bold text-gray-900">ChefBook</span>
             </div>
