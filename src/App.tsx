@@ -31,6 +31,7 @@ function App() {
   const [currentView, setCurrentView] = useState("landing");
   const [cart, setCart] = useState<CartItem[]>([]);
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
+  const [itemList, setItemList] = useState<any[]>([]);
 
   const addToCart = (item: any) => {
     setCart((prev) => {
@@ -83,7 +84,10 @@ function App() {
         return (
           <MenuScanner
             onBack={() => setCurrentView("profile")}
-            onComplete={() => setCurrentView("portfolio")}
+            onComplete={(parsedItems: any[]) => {
+              setItemList(parsedItems);
+              setCurrentView("portfolio");
+            }}
             userProfile={userProfile}
           />
         );
@@ -96,6 +100,7 @@ function App() {
             addToCart={addToCart}
             onViewCart={() => setCurrentView("cart")}
             userProfile={userProfile}
+            itemList={itemList}
           />
         );
       case "cart":

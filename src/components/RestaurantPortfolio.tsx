@@ -26,6 +26,7 @@ export function RestaurantPortfolio({
   addToCart,
   onViewCart,
   userProfile,
+  itemList,
 }: {
   onBack: () => void;
   onDashboard: () => void;
@@ -34,7 +35,7 @@ export function RestaurantPortfolio({
   onViewCart: () => void;
   userProfile: UserProfile | null;
 }) {
-  const menuItems = [
+  const menuItems = itemList || [
     {
       id: 1,
       name: "Margherita Pizza",
