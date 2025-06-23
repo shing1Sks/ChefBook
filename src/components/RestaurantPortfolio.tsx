@@ -1,4 +1,11 @@
-import { ShoppingCart, Star, Clock, MapPin, Settings2 } from "lucide-react";
+import {
+  ShoppingCart,
+  Star,
+  Clock,
+  MapPin,
+  Settings2,
+  AlertTriangle as TriangleAlert,
+} from "lucide-react";
 
 interface UserProfile {
   name: string;
@@ -208,11 +215,24 @@ export function RestaurantPortfolio({
               key={item.id}
               className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow flex flex-col"
             >
-              <img
-                src={item.image}
-                alt={item.name}
-                className="w-full h-48 object-cover"
-              />
+              <div className="relative w-full h-48">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-full object-cover"
+                />
+
+                {item.alert && (
+                  <div className="absolute bottom-2 right-2 group">
+                    <div className="bg-orange-400/90 cursor-pointer text-white p-1 rounded-full">
+                      <TriangleAlert className="w-6 h-6" />
+                    </div>
+                    <div className="absolute bottom-full right-0 mb-2 hidden group-hover:block bg-black text-white text-xs px-2 py-1 rounded shadow">
+                      This image is a placeholder due to limited image credits.
+                    </div>
+                  </div>
+                )}
+              </div>
               <div className="p-6 flex flex-col flex-1">
                 <div className="flex justify-between items-start mb-2">
                   <h3 className="text-xl font-bold text-gray-900">
