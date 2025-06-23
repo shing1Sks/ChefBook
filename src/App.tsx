@@ -37,7 +37,7 @@ function App() {
       name: "Margherita Pizza",
       description:
         "Classic Italian pizza with fresh mozzarella, basil, and San Marzano tomatoes",
-      price: "$18",
+      price: "18",
       image:
         "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "Pizza",
@@ -48,7 +48,7 @@ function App() {
       name: "Truffle Risotto",
       description:
         "Creamy Arborio rice with black truffle, parmesan, and wild mushrooms",
-      price: "$28",
+      price: "28",
       image:
         "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "Pasta & Risotto",
@@ -59,7 +59,7 @@ function App() {
       name: "Grilled Branzino",
       description:
         "Mediterranean sea bass with lemon herbs, roasted vegetables, and olive tapenade",
-      price: "$32",
+      price: "32",
       image:
         "https://images.pexels.com/photos/725991/pexels-photo-725991.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "Seafood",
@@ -70,7 +70,7 @@ function App() {
       name: "Pork Tenderloin",
       description:
         "Prime cut pork with roasted garlic, seasonal vegetables, and red wine reduction",
-      price: "$42",
+      price: "42",
       image:
         "https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "Meat",
@@ -81,7 +81,7 @@ function App() {
       name: "Tiramisu",
       description:
         "Traditional Italian dessert with espresso-soaked ladyfingers and mascarpone",
-      price: "$12",
+      price: "12",
       image:
         "https://images.pexels.com/photos/6880219/pexels-photo-6880219.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "Desserts",
@@ -92,7 +92,7 @@ function App() {
       name: "Caesar Salad",
       description:
         "Crisp romaine lettuce with parmesan, croutons, and house-made Caesar dressing",
-      price: "$14",
+      price: "14",
       image:
         "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "Salads",
