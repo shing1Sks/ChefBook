@@ -42,7 +42,7 @@ export function RestaurantPortfolio({
   onViewCart: () => void;
   userProfile: UserProfile | null;
 }) {
-  const menuItems = itemList || [
+  const menuItems = [
     {
       id: 1,
       name: "Margherita Pizza",
@@ -52,6 +52,7 @@ export function RestaurantPortfolio({
       image:
         "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "Pizza",
+      alert: false,
     },
     {
       id: 2,
@@ -62,6 +63,7 @@ export function RestaurantPortfolio({
       image:
         "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "Pasta & Risotto",
+      alert: false,
     },
     {
       id: 3,
@@ -72,6 +74,7 @@ export function RestaurantPortfolio({
       image:
         "https://images.pexels.com/photos/725991/pexels-photo-725991.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "Seafood",
+      alert: false,
     },
     {
       id: 4,
@@ -82,6 +85,7 @@ export function RestaurantPortfolio({
       image:
         "https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "Meat",
+      alert: false,
     },
     {
       id: 5,
@@ -92,6 +96,7 @@ export function RestaurantPortfolio({
       image:
         "https://images.pexels.com/photos/6880219/pexels-photo-6880219.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "Desserts",
+      alert: false,
     },
     {
       id: 6,
@@ -102,6 +107,7 @@ export function RestaurantPortfolio({
       image:
         "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "Salads",
+      alert: false,
     },
   ];
 
@@ -210,7 +216,7 @@ export function RestaurantPortfolio({
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h2 className="text-3xl font-bold text-gray-900 mb-8">Our Menu</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {menuItems.map((item) => (
+          {(itemList || menuItems).map((item) => (
             <div
               key={item.id}
               className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow flex flex-col"
@@ -224,7 +230,7 @@ export function RestaurantPortfolio({
 
                 {item.alert && (
                   <div className="absolute bottom-2 right-2 group">
-                    <div className="bg-orange-400/90 cursor-pointer text-white p-1 rounded-full">
+                    <div className="bg-orange-600/90 cursor-pointer text-white p-2 rounded-full">
                       <TriangleAlert className="w-6 h-6" />
                     </div>
                     <div className="absolute bottom-full right-0 mb-2 hidden group-hover:block bg-black text-white text-xs px-2 py-1 rounded shadow">
