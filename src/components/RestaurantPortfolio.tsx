@@ -41,6 +41,7 @@ export function RestaurantPortfolio({
   addToCart: (item: any) => void;
   onViewCart: () => void;
   userProfile: UserProfile | null;
+  itemList: any[];
 }) {
   const menuItems = [
     {

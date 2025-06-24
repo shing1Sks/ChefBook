@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ProfileSetup } from "./components/ProfileSetup.tsx";
 import { MenuScanner } from "./components/MenuScanner.tsx";
 import { RestaurantPortfolio } from "./components/RestaurantPortfolio.tsx";
