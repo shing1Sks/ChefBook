@@ -67,7 +67,7 @@ export async function generateMenuFromOCR(ocrText) {
           parts: [
             {
               text: `Based on the given raw OCR text of a restaurant menu, return ONLY valid JSON in this format:
-Generate nice and professional descriptions for each item.
+Generate nice and professional descriptions for each item. Price should be a single number with currency symbol (e.g. "$12.99","₹500"). Use the best guess for each item.
 {
   "items": [
     {

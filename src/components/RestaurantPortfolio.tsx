@@ -245,7 +245,7 @@ export function RestaurantPortfolio({
                     {item.name}
                   </h3>
                   <span className="text-xl font-bold text-orange-600">
-                    {`$${item.price}`}
+                    {`${item.price}`}
                   </span>
                 </div>
                 <p className="text-gray-600 mb-4 flex-grow">

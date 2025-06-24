@@ -15,7 +15,7 @@ export function CartView({
   onCheckout,
 }: {
   cart: CartItem[];
-  updateQuantity: (id: number, quantity: number) => void;
+  updateQuantity: (name: string, quantity: number) => void;
   onBack: () => void;
   onCheckout: () => void;
 }) {
@@ -72,7 +72,7 @@ export function CartView({
                     <div className="flex items-center space-x-3">
                       <button
                         onClick={() =>
-                          updateQuantity(item.id, item.quantity - 1)
+                          updateQuantity(item.name, item.quantity - 1)
                         }
                         className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition-colors"
                       >
@@ -83,7 +83,7 @@ export function CartView({
                       </span>
                       <button
                         onClick={() =>
-                          updateQuantity(item.id, item.quantity + 1)
+                          updateQuantity(item.name, item.quantity + 1)
                         }
                         className="w-8 h-8 rounded-full bg-orange-600 text-white flex items-center justify-center hover:bg-orange-700 transition-colors"
                       >
@@ -91,7 +91,7 @@ export function CartView({
                       </button>
                     </div>
                     <button
-                      onClick={() => updateQuantity(item.id, 0)}
+                      onClick={() => updateQuantity(item.name, 0)}
                       className="text-red-600 hover:text-red-700 p-2"
                     >
                       <Trash2 className="w-5 h-5" />
