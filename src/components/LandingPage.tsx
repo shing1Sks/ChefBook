@@ -12,10 +12,10 @@ export function LandingPage({
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-20">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-                <ChefHat className="w-5 h-5 text-white" />
+              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
+                <ChefHat className="w-8 h-8 text-white" />
                 {/* <img
                   src="../logo.png"
                   className="w-8 h-8 rounded-md"
@@ -26,9 +26,9 @@ export function LandingPage({
                   alt=""
                 /> */}
               </div>
-              <span className="text-xl font-bold text-gray-900">ChefBook</span>
+              <span className="text-2xl font-bold text-gray-900">ChefBook</span>
             </div>
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex text-2xl items-center space-x-8">
               <a
                 href="#features"
                 className="text-gray-600 hover:text-gray-900 transition-colors"
@@ -59,7 +59,7 @@ export function LandingPage({
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-orange-50 to-red-50">
+      <section className="pt-[100px] sm:pt-[200px] pb-16 bg-gradient-to-br min-h-[calc(100vh-80px)] from-orange-50 to-red-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -122,39 +122,39 @@ export function LandingPage({
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="features" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
               Everything You Need
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               From menu scanning to online orders, ChefBook provides all the
-              tools to digitize your restaurant
+              tools to digitize your restaurant.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <FeatureCard
               icon={<Camera className="w-8 h-8" />}
               title="AI Menu Scanning"
-              description="Simply photograph your menu and our AI extracts all dishes with descriptions"
+              description="Simply photograph your menu and our AI extracts all dishes with descriptions."
             />
             <FeatureCard
               icon={<Zap className="w-8 h-8" />}
               title="Instant Portfolio"
-              description="Get a professional restaurant website generated in minutes, not weeks"
+              description="Get a professional restaurant website generated in minutes, not weeks."
             />
             <FeatureCard
               icon={<Users className="w-8 h-8" />}
               title="Online Ordering"
-              description="Integrated ordering system lets customers order directly from your portfolio"
+              description="Integrated ordering system lets customers order directly from your portfolio."
             />
           </div>
         </div>
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="py-20 bg-gray-50">
+      <section id="how-it-works" className="py-20 mb-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -190,18 +190,18 @@ export function LandingPage({
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-600 to-red-600">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white mb-6">
+      <section className="py-24 bg-gradient-to-r from-orange-600 to-red-600">
+        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
+          <h2 className="text-4xl font-extrabold text-white mb-6">
             Ready to Transform Your Restaurant?
           </h2>
           <p className="text-xl text-orange-100 mb-8">
             Join thousands of restaurants already using ChefBook to boost their
-            online presence
+            online presence.
           </p>
           <button
             onClick={() => onNavigate("profile")}
-            className="bg-white text-orange-600 px-10 py-4 rounded-xl hover:bg-gray-50 transition-colors font-bold text-lg transform hover:scale-105"
+            className="bg-white text-orange-600 px-10 py-4 rounded-xl hover:bg-gray-50 transition-colors font-bold text-lg transform hover:scale-105 shadow-lg"
           >
             Start Your Free Trial
           </button>
