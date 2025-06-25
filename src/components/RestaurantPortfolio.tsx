@@ -6,6 +6,7 @@ import {
   Settings2,
   AlertTriangle as TriangleAlert,
 } from "lucide-react";
+import { useEffect } from "react";
 
 interface UserProfile {
   name: string;
@@ -111,6 +112,45 @@ export function RestaurantPortfolio({
       alert: false,
     },
   ];
+
+  console.log("User Profile:", userProfile);
+  console.log("Item List:", itemList);
+
+  const savePortfolio = async () => {
+    const res = await fetch(
+      `${import.meta.env.VITE_API_URL}/api/save-portfolio`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: userProfile?.name || "John Doe",
+          email: userProfile?.email || "F6S6o@example.com",
+          phone: userProfile?.phone || "123-456-7890",
+          address: userProfile?.address || "123 Main St, Downtown",
+          restaurantName:
+            userProfile?.restaurantName || "Bella Vista Restaurant",
+          cuisine: userProfile?.cuisine || "Italian",
+          description:
+            userProfile?.description ||
+            "Authentic Italian cuisine in the heart of the city. Experience traditional recipes passed down through generations.",
+          image:
+            userProfile?.image ||
+            "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600",
+          items: itemList || menuItems,
+        }),
+      }
+    );
+    const data = await res.json();
+    console.log(data);
+  };
+
+  useEffect(() => {
+    if (userProfile && itemList && itemList.length > 0) {
+      savePortfolio();
+    }
+  }, [userProfile]);
 
   const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0);
 

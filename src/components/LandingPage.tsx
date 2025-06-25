@@ -91,6 +91,16 @@ export function LandingPage({
                   View Demo
                 </button>
               </div>
+              {/* View Portfolios CTA */}
+              <div className="flex w-full mt-10 ">
+                <a
+                  href="/portfolios"
+                  className=" inline-flex items-center px-20 text-xl py-3 text-orange-600 font-medium border-2 border-orange-300 rounded-lg hover:bg-orange-50 hover:border-orange-500 transition-all group"
+                >
+                  View All Portfolios
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
             </div>
             <div className="relative">
               <div className="bg-white rounded-2xl shadow-2xl p-6 transform rotate-3 hover:rotate-0 transition-transform duration-500">
