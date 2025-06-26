@@ -54,9 +54,6 @@ function Portfolios() {
       .catch((err) => console.error("Failed to load portfolios", err));
   }, []);
 
-  // 🔙 Back to list
-  const handleBack = () => setSelectedPortfolio(null);
-
   if (currentView === "cart") {
     return (
       <CartView
@@ -107,9 +104,17 @@ function Portfolios() {
     return (
       <div className="min-h-screen bg-orange-50 py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl font-extrabold text-gray-900 mb-10">
-            Restaurant Portfolios
-          </h1>
+          <a
+            href="/"
+            className="text-orange-600 text-xl border-2 border-orange-500 rounded-md pl-2 pr-4 hover:text-orange-700 font-medium"
+          >
+            ← Back
+          </a>
+          <div className="w-full flex flow-row items-center justify-center max-w-2xl mx-auto text-center mb-12">
+            <h1 className="text-4xl font-extrabold text-gray-900 mb-10">
+              Restaurant Portfolios
+            </h1>
+          </div>
 
           {portfolios.length === 0 ? (
             <p className="text-gray-500">No portfolios found.</p>

@@ -195,9 +195,12 @@ export function RestaurantPortfolio({
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div>
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              <a
+                href={`/portfolio/${userProfile?.restaurantName}`}
+                className="text-4xl hover:text-orange-400 hover:underline font-bold text-orange-600 mb-4"
+              >
                 {userProfile?.restaurantName || "Bella Vista Restaurant"}
-              </h1>
+              </a>
               <p className="text-xl text-gray-600 mb-6">
                 {userProfile?.description ||
                   "Authentic Italian cuisine in the heart of the city. Experience traditional recipes passed down through generations."}
