@@ -150,7 +150,7 @@ export function RestaurantPortfolio({
     if (userProfile && itemList && itemList.length > 0) {
       savePortfolio();
     }
-  }, [userProfile]);
+  }, []);
 
   const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0);
 

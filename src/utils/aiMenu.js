@@ -22,7 +22,7 @@ const fallbackImages = [
 
 // ✅ helper: get real image if allowed, or fallback
 async function fetchImageForItem(name) {
-  const useFallbackOnly = true;
+  const useFallbackOnly = false;
 
   if (useFallbackOnly) {
     const random =
@@ -32,7 +32,7 @@ async function fetchImageForItem(name) {
 
   try {
     const res = await fetch(
-      `${import.meta.env.VITE_API_URL}/api/scrape-image`,
+      `${import.meta.env.VITE_API_URL}/api/unsplash-random`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -40,13 +40,20 @@ async function fetchImageForItem(name) {
       }
     );
     const data = await res.json();
+    console.log("✅ Scrape result:", data);
     return {
       url:
-        data.image?.thumbnail ||
-        data.image?.serpapi_thumbnail ||
+        data ||
         fallbackImages[Math.floor(Math.random() * fallbackImages.length)],
-      alert: !data.image?.thumbnail, // if fallback used
+      alert: !data,
     };
+    // return {
+    //   url:
+    //     data.image?.thumbnail ||
+    //     data.image?.serpapi_thumbnail ||
+    //     fallbackImages[Math.floor(Math.random() * fallbackImages.length)],
+    //   alert: !data.image?.thumbnail, // if fallback used
+    // };
   } catch (err) {
     console.log("❌ Scrape failed, fallback used:", err);
     const random =

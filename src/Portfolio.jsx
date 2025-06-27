@@ -6,7 +6,6 @@ import { CheckoutView } from "./components/CheckoutView.tsx";
 import { OrderSuccess } from "./components/OrderSuccess.tsx";
 import { Dashboard } from "./components/Dashboard.tsx";
 import { useNavigate } from "react-router-dom";
-import { Construction } from "lucide-react";
 
 function Portfolio() {
   const { restaurantName } = useParams();
