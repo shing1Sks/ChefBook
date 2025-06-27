@@ -94,10 +94,12 @@ function Portfolios() {
     );
   }
   if (currentView === "dashboard") {
-    <Dashboard
-      onBack={() => setCurrentView("portfolio")}
-      userProfile={selectedPortfolio}
-    />;
+    return (
+      <Dashboard
+        onBack={() => setCurrentView("portfolio")}
+        userProfile={selectedPortfolio}
+      />
+    );
   }
 
   if (currentView === "landing") {
