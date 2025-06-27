@@ -1,6 +1,7 @@
 import { Menu } from "lucide-react";
 import { StatCard } from "./StatCard.tsx";
 import { MenuItemRow } from "./MenuItemRow.tsx";
+import { AnalyticsSection } from "./AnalyticsSection.tsx";
 
 interface UserProfile {
   name: string;
@@ -53,6 +54,8 @@ export function Dashboard({
             and orders
           </p>
         </div>
+
+        <AnalyticsSection />
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Stats Cards */}
