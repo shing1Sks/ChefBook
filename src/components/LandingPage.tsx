@@ -1,12 +1,26 @@
 import { Camera, ArrowRight, Star, Zap, Users, ChefHat } from "lucide-react";
 import { FeatureCard } from "./FeatureCard.tsx";
 import { StepCard } from "./StepCard.tsx";
+import { useEffect, useRef, useState } from "react";
 
 export function LandingPage({
   onNavigate,
 }: {
   onNavigate: (view: string) => void;
 }) {
+  const badgeRef = useRef<HTMLImageElement>(null);
+  const [animated, setAnimated] = useState(false);
+
+  useEffect(() => {
+    const badge = badgeRef.current;
+    if (!badge) return;
+
+    const handleAnimationEnd = () => setAnimated(true);
+    badge.addEventListener("animationend", handleAnimationEnd);
+
+    return () => badge.removeEventListener("animationend", handleAnimationEnd);
+  }, []);
+
   return (
     <div className="min-h-screen">
       {/* Navigation */}
@@ -217,6 +231,49 @@ export function LandingPage({
           </button>
         </div>
       </section>
+      <div className="fixed bottom-4 right-4 z-50">
+        <a
+          href="https://bolt.new/?rid=os72mi"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block transition-all duration-300 hover:shadow-2xl"
+        >
+          <img
+            ref={badgeRef}
+            src="https://storage.bolt.army/white_circle_360x360.png"
+            alt="Built with Bolt.new badge"
+            className={`w-20 h-20 md:w-28 md:h-28 rounded-full shadow-lg 
+            transition-all duration-300 
+            ${animated ? "" : "animate-[badgeIntro_0.8s_ease-out_1s_forwards]"} 
+            hover:animate-[badgeHover_0.6s_ease-in-out]`}
+          />
+        </a>
+
+        {/* Keyframe styles injected here (since Tailwind doesn't support custom named animations by default) */}
+        <style jsx>{`
+          @keyframes badgeIntro {
+            0% {
+              transform: rotateY(-90deg);
+              opacity: 0;
+            }
+            100% {
+              transform: rotateY(0deg);
+              opacity: 1;
+            }
+          }
+          @keyframes badgeHover {
+            0% {
+              transform: scale(1) rotate(0deg);
+            }
+            50% {
+              transform: scale(1.1) rotate(22deg);
+            }
+            100% {
+              transform: scale(1) rotate(0deg);
+            }
+          }
+        `}</style>
+      </div>
     </div>
   );
 }
